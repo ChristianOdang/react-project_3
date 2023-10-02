@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function Stats() {
+function Stats({ items }) {
+  const numItems = items.length;
+  const numPacked = items.filter((item) => item.packed).length;
+
   return (
     <footer className='stats'>
-      <em>You have X items on your list, and you already packed X  </em>
+      <em>
+        You have {numItems} items on your list, and you already packed{" "} {numPacked} (X%)
+      </em>
     </footer>
-  )
+  );
 }
 
-export default Stats
+export default Stats;
